@@ -1,7 +1,7 @@
 import { useRef } from "react"
 import { Droplets, Sun, Wind, Eye, Gauge, CloudRain } from "lucide-react"
-import { useIntersectionObserver } from "../hooks/useIntersectionObserver.js"
-import { Card, CardHeader, CardContent, CardTitle } from "@/Components/ui/card.jsx"
+import { useIntersectionObserver } from "../Hooks/useIntersectionObserver"
+import { Card, CardHeader, CardContent, CardTitle } from "@/components/ui/card.jsx"
 const weatherTips = [
   {
     id: 1,

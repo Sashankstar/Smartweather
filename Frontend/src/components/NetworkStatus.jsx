@@ -1,5 +1,5 @@
 import { Wifi, WifiOff } from "lucide-react"
-import { useNetworkInfo } from "../hooks/useNetworkInfo.js"
+import { useNetworkInfo } from "../Hooks/useNetworkInfo"
 
 export const NetworkStatus = () => {
   const networkInfo = useNetworkInfo()

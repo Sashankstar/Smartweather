@@ -6,10 +6,10 @@ import {
   CardFooter,
   CardDescription,
   CardAction
-} from "@/Components/ui/card.jsx"
+} from "@/components/ui/card.jsx"
 
-import { Skeleton } from "@/Components/ui/skeleton.jsx"
-import { Badge } from "@/Components/ui/badge.jsx"
+import { Skeleton } from "@/components/ui/skeleton.jsx"
+import { Badge } from "@/components/ui/badge.jsx"
 import {
   MapPin,
   Thermometer,
