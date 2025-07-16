@@ -2,10 +2,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/Components/ui/card.j
 import { Button } from "@/Components/ui/button"
 import { Alert, AlertDescription } from "@/Components/ui/alert.jsx"
 import { RefreshCw, TrendingUp } from "lucide-react"
-
-// Other imports remain the same
-import { useWeatherData } from "./hooks/useWeatherData.js"
-import { useBackgroundSync } from "./hooks/useBackgroundSync.js"
+import { useWeatherData } from "./Hooks/useWeatherData.js"
+import { useBackgroundSync } from "./Hooks/useBackgroundSync.js"
 import { NetworkStatus } from "./components/NetworkStatus.jsx"
 import { WeatherCards } from "./components/WeatherCards.jsx" 
 import { WeatherChart } from "./components/WeatherChart.jsx"
@@ -35,7 +33,6 @@ export default function App() {
       </div>
     )
   }
-
   return (
     <div>
       <div className="max-w-6xl mx-auto space-y-8">
@@ -67,7 +64,6 @@ export default function App() {
           </CardContent>
             <WeatherChart />
         </Card>
-
         <div className="flex items-center justify-between text-sm text-gray-500 mt-6 bg-white p-3 rounded-md shadow-sm">
           <div style={{display:"flex", alignItems:"center", gap:"0.5rem", color:"green"}}>
             <NetworkStatus/>

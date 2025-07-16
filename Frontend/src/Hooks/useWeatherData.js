@@ -1,17 +1,14 @@
 import { useState, useEffect, useCallback } from "react"
 import { geolocationService } from "../services/geolocationService.js"
-
 export const useWeatherData = () => {
   const [weatherData, setWeatherData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [lastUpdated, setLastUpdated] = useState(null)
-
   const fetchWeatherData = useCallback(async () => {
     try {
       setLoading(true)
       setError(null)
-
       const coords = await geolocationService.getCurrentLocation()
 
       // Call the backend server API
