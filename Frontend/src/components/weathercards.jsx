@@ -41,8 +41,7 @@ const getWeatherIcon = (description) => {
       return <Sun className="h-8 w-8 text-yellow-500" />
   }
 }
-
-const WeatherCards = ({ weatherData, loading }) => {
+ export const Weathercard = ({ weatherData, loading }) => {
   return (
     <>
     <div style={{display: "grid", gridtemplatecolumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1rem",backgroundColor:"#dbeafe"}}>
@@ -174,4 +173,3 @@ const WeatherCards = ({ weatherData, loading }) => {
     </>
   )
 }
-export default WeatherCards;

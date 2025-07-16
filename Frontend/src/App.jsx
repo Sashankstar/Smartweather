@@ -5,9 +5,10 @@ import { RefreshCw, TrendingUp } from "lucide-react"
 import { useWeatherData } from "./Hooks/useWeatherData.js"
 import { useBackgroundSync } from "./Hooks/useBackgroundSync.js"
 import { NetworkStatus } from "./components/NetworkStatus.jsx"
-import{ WeatherCards } from"../components/WeatherCards.jsx"
 import { WeatherChart } from "./components/WeatherChart.jsx"
 import { WeatherTips } from "./components/WeatherTips.jsx"
+import { Weathercard } from "./Components/WeatherCards.jsx";
+
 
 export default function App() {
   const { weatherData, loading, error, lastUpdated, refetch } = useWeatherData()
@@ -51,7 +52,7 @@ export default function App() {
         </div>
         <Card className="rounded-lg shadow-md" >
         <div style={{display: "grid", gridTemplateColumns: "repeat(2, minmax(300px, 1fr))", gap: "1rem",backgroundColor:"#dbeafe", padding:"1.5rem", borderRadius:"0.75rem",boxShadow:"0 2px 6px rgba(0, 0, 0, 0.1)",marginTop:"1.5rem"}}>
-          <WeatherCards weatherData={weatherData} loading={loading} style={{border:"1px solid red"}}/>
+          <Weathercard weatherData={weatherData} loading={loading} style={{border:"1px solid red"}}/>
           <WeatherTips />
         </div>
           <CardHeader >
