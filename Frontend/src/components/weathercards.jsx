@@ -42,7 +42,7 @@ const getWeatherIcon = (description) => {
   }
 }
 
-export const weatherCards = ({ weatherData, loading }) => {
+export const WeatherCards = ({ weatherData, loading }) => {
   return (
     <>
     <div style={{display: "grid", gridtemplatecolumns: "repeat(auto-fit, minmax(220px, 1fr))", gap: "1rem",backgroundColor:"#dbeafe"}}>
