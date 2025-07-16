@@ -7,8 +7,7 @@ import { useBackgroundSync } from "./Hooks/useBackgroundSync.js"
 import { NetworkStatus } from "./components/NetworkStatus.jsx"
 import { WeatherChart } from "./components/WeatherChart.jsx"
 import { WeatherTips } from "./components/WeatherTips.jsx"
-import { Weathercard } from "./Components/WeatherCards.jsx";
-
+import { Weathercard } from "./components/Weathercards.jsx";
 
 export default function App() {
   const { weatherData, loading, error, lastUpdated, refetch } = useWeatherData()
