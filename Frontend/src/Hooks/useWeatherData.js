@@ -10,10 +10,9 @@ export const useWeatherData = () => {
       setLoading(true)
       setError(null)
       const coords = await geolocationService.getCurrentLocation()
-
       // Call the backend server API
       const response = await fetch(
-        `http://localhost:3001/api/weather/current?lat=${coords.latitude}&lon=${coords.longitude}`,
+        `https://smartweather.onrender.com/api/weather/current?lat=${coords.latitude}&lon=${coords.longitude}`,
         console.error("Backend API Error (current weather):", error)
       )
       const result = await response.json()
