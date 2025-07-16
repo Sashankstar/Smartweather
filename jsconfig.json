@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
+  },
+  "include": ["src", "Frontend/src/components/ui/button.jsx", "Frontend/src/components/ui/badge.jsx"]
+}
