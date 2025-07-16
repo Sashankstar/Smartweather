@@ -1,6 +1,6 @@
-import { Card, CardContent, CardHeader, CardTitle } from "@/Components/ui/card.jsx";
-import { Button } from "@/Components/ui/button"
-import { Alert, AlertDescription } from "@/Components/ui/alert.jsx"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card.jsx";
+import { Button } from "@/components/ui/button"
+import { Alert, AlertDescription } from "@/components/ui/alert.jsx"
 import { RefreshCw, TrendingUp } from "lucide-react"
 import { useWeatherData } from "./Hooks/useWeatherData.js"
 import { useBackgroundSync } from "./Hooks/useBackgroundSync.js"
