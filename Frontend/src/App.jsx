@@ -5,7 +5,7 @@ import { RefreshCw, TrendingUp } from "lucide-react"
 import { useWeatherData } from "./Hooks/useWeatherData.js"
 import { useBackgroundSync } from "./Hooks/useBackgroundSync.js"
 import { NetworkStatus } from "./components/NetworkStatus.jsx"
-import{ WeatherCards } from "./Components/WeatherCards.jsx";
+import{ WeatherCards } from"../components/WeatherCards.jsx"
 import { WeatherChart } from "./components/WeatherChart.jsx"
 import { WeatherTips } from "./components/WeatherTips.jsx"
 
