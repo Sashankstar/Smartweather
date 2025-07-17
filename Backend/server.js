@@ -10,7 +10,6 @@ const PORT = process.env.PORT || 3001
 // Enable CORS for frontend communication
 app.use(cors())
 app.use(express.json()) // For parsing application/json
-
 // API endpoint to get current weather
 app.get("/api/weather/current", async (req, res) => {
   try {

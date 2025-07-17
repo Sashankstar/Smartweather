@@ -1,30 +1,45 @@
 import { useState, useEffect, useCallback } from "react"
 import { geolocationService } from "../services/geolocationService.js"
+
 export const useWeatherData = () => {
   const [weatherData, setWeatherData] = useState(null)
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [lastUpdated, setLastUpdated] = useState(null)
-  const fetchWeatherData = useCallback(async () => {
-    try {
-      setLoading(true)
-      setError(null)
-      const coords = await geolocationService.getCurrentLocation()
-      // Call the backend server API
-      const response = await fetch(
-        `https://smartweather.onrender.com/api/weather/current?lat=${coords.latitude}&lon=${coords.longitude}`,
-        console.error("Backend API Error (current weather):", error)
-      )
-      const result = await response.json()
 
-      if (response.ok && result.success && result.data) {
+  const fetchWeatherData = useCallback(async () => {
+    setLoading(true)
+    setError(null)
+    try {
+      const coords = await geolocationService.getCurrentLocation()
+      const url = `https://smartweather.onrender.com/api/weather/current?lat=${coords.latitude}&lon=${coords.longitude}`
+
+      const response = await fetch(url)
+      const text = await response.text()  // read raw response
+
+      if (!response.ok) {
+        console.error("Fetch error:", text)
+        throw new Error(`HTTP ${response.status}`)
+      }
+
+      let result
+      try {
+        result = JSON.parse(text)  // safe parse
+      } catch (parseErr) {
+        console.error("Invalid JSON:", text)
+        throw new Error("Invalid JSON response")
+      }
+
+      if (result.success && result.data) {
         setWeatherData(result.data)
         setLastUpdated(new Date())
       } else {
-        setError(result.error || "Failed to fetch weather data from API")
+        throw new Error(result.error || "API returned invalid data")
       }
+
     } catch (err) {
-      setError(err.message || "Unknown error occurred during API call")
+      console.error("FetchWeatherData error:", err)
+      setError(err.message)
     } finally {
       setLoading(false)
     }

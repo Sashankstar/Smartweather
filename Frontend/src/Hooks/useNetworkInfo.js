@@ -1,5 +1,3 @@
-"use client"
-
 import { useState, useEffect } from "react"
 import { networkService } from "../services/networkService.js"
 
