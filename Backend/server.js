@@ -28,7 +28,6 @@ app.get("/api/weather/current", async (req, res) => {
     res.status(500).json({ success: false, error: error.message })
   }
 })
-
 // API endpoint to get weather history
 app.get("/api/weather/history", async (req, res) => {
   try {
@@ -41,5 +40,5 @@ app.get("/api/weather/history", async (req, res) => {
 })
 
 app.listen(PORT, () => {
-  console.log(`Backend server running on http://localhost:${PORT}`)
+  console.log(`Backend server running on https://smartweather.onrender.com:${PORT}`)
 })
